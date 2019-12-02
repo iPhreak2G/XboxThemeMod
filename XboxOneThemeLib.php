@@ -35,8 +35,7 @@ class XboxOneTheme {
 		if($ip !== "UNKNOWN"){
 			switch($ip){
 				case "your ip":
-					echo $this->get_vip_user_json("your gamertag");
-					break;
+					
 				case "friends ip":
 					echo $this->get_vip_user_json("friends gamertag");
 					break;
@@ -44,6 +43,10 @@ class XboxOneTheme {
 					echo $this->build_json_response($this->random_color());
 					break;
 			}
+			return true;
+		}else{
+			echo $this->build_json_response($this->random_color());
+			return false;
 		}
 	}
 }
